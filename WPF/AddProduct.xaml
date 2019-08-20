@@ -1,0 +1,139 @@
+﻿<UserControl x:Class="WPF.AddProduct"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF"
+             mc:Ignorable="d" >
+    <UserControl.Resources>
+        <Storyboard x:Key="ComeInProduct">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="groupBox2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="groupBox1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="groupBox">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="10*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="25*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="35*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <GroupBox x:Name="groupBox" Grid.Column="1" Header="Main Category" Grid.Row="1" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="140"/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="45*"/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="15*"/>
+                        <ColumnDefinition Width="5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="45*"/>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="45*"/>
+                        <RowDefinition Height="3*"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="Describe Main Category" Grid.Row="1" Grid.Column="1" />
+                    <Label Content="Name Main Category" Grid.Row="3" Grid.Column="1" />
+                    <TextBox Name="txtDescribeMainCategory" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3"/>
+                    <TextBox Name="txtNameMainCategory" Grid.Row="3" Grid.Column="3" />
+                    <Button Name="btnCreateMainCategory" Content="Create" Grid.Row="3" Grid.Column="5" Style="{StaticResource confirmButton}"/>
+                </Grid>
+            </GroupBox>
+            <GroupBox x:Name="groupBox1" Grid.Column="1" Header="Subcategory" Grid.Row="3" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="140"/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="45*"/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="15*"/>
+                        <ColumnDefinition Width="5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="30*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="30*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="30*"/>
+                        <RowDefinition Height="3*"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="Main Category" Grid.Row="1" Grid.Column="1" />
+                    <Label Content="Describe Subcategory" Grid.Row="3" Grid.Column="1" />
+                    <Label Content="Subcategory Name" Grid.Row="5" Grid.Column="1" />
+                    <ComboBox Name="cboMainCategory1" Grid.Row="1" Grid.Column="3" />
+                    <TextBox Name="txtDescribeSubCategory" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="3" />
+                    <TextBox Name="txtNameSubCategory" Grid.Row="5" Grid.Column="3" />
+                <Button Name="btnCreateSubCategory" Content="Create" Grid.Row="5" Grid.Column="5" Style="{StaticResource confirmButton}" />
+                </Grid>
+            </GroupBox>
+        <GroupBox x:Name="groupBox2" Grid.Column="1" Header="Item Name" Grid.Row="5" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="140"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="22*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="22*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="15*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="16*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="16*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="16*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="16*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="16*"/>
+                    <RowDefinition Height="4*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Main Category" Grid.Row="1" Grid.Column="1" />
+                <Label Content="Subcategory" Grid.Row="3" Grid.Column="1" />
+                <Label Content="Describe Control" Grid.Row="5" Grid.Column="1" />
+                <Label Content="Item Name" Grid.Row="7" Grid.Column="1" />
+                <Label Content="Conversion" Grid.Row="9" Grid.Column="1" />
+
+                <ComboBox Name="cboMainCategory2" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3" />
+                <ComboBox Name="cboSubCategory" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="3"  />
+
+                <TextBox Name="txtDescribeItem" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="5"/>
+                <TextBox Name="txtNameItem" Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="5"/>
+                <TextBox Name="txtConvertItem" Grid.Row="9" Grid.Column="3"/>
+                <TextBlock Text="e.g unit to loose" Grid.Row="9" Grid.Column="5" Grid.ColumnSpan="1" FontWeight="Normal" VerticalAlignment="Center"/>
+                <Button Name="btnCreateItem" Content="Create" Grid.Row="9" Grid.Column="7" Style="{StaticResource confirmButton}" />
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>

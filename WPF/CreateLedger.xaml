@@ -1,0 +1,103 @@
+﻿<UserControl x:Class="WPF.CreateLedger"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <Storyboard x:Key="ComeIn">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="groupBox">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="groupBox1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="15*"/>
+        </Grid.ColumnDefinitions>
+        
+            <GroupBox x:Name="groupBox" Header="Create General Ledger" Grid.Column="1" Grid.Row="1">
+                <Grid x:Name="grid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="35*"/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="15*"/>
+                        <ColumnDefinition Width="5*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label x:Name="label" Content="Main Head" Grid.Row="1" Grid.Column="1" />
+                    <Label x:Name="label1" Content="Decribe General" Grid.Row="3" Grid.Column="1" />
+                    <Label x:Name="label2" Content="Name General" Grid.Row="5" Grid.Column="1" />
+                    <ComboBox Name="cboMainHead1" Grid.Row="1" Grid.Column="3" />
+                    <TextBox Name="txtDescribeGeneral" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="3" />
+                    <TextBox Name="txtNameGeneral" Grid.Row="5" Grid.Column="3" />
+                    <Button Name="btnCreateGeneral" Content="Create" Grid.Row="5" Grid.Column="5" Style="{StaticResource confirmButton}" />
+                </Grid>
+            </GroupBox>
+            <GroupBox x:Name="groupBox1" Header="Create Control Ledger" Grid.Column="1" Grid.Row="3">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="40*"/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="15*"/>
+                        <ColumnDefinition Width="5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5.5*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="5.5*"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="Main Head" Grid.Row="1" Grid.Column="1" />
+                    <Label Content="General Head" Grid.Row="3" Grid.Column="1" />
+                    <Label Content="Describe Control" Grid.Row="5" Grid.Column="1" />
+                    <Label Content="Name Control" Grid.Row="7" Grid.Column="1" />
+                    <ComboBox Name="cboMainHead2" Grid.Row="1" Grid.Column="3" />
+                    <ComboBox Name="cboGeneralHead" Grid.Row="3" Grid.Column="3" />
+                    <TextBox Name="txtDescribeControl" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="3"/>
+                    <TextBox Name="txtNameControl" Grid.Row="7" Grid.Column="3"/>
+                    <Button Name="btnCreateControl" Content="Create" Grid.Row="7" Grid.Column="5" Style="{StaticResource confirmButton}"/>
+                </Grid>
+            </GroupBox>
+       
+
+    </Grid>
+</UserControl>

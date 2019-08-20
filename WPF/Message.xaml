@@ -1,0 +1,25 @@
+﻿<Window x:Class="WPF.Message"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF"
+        mc:Ignorable="d"
+        Title="Message" Height="400" Width="400" Foreground="{x:Null}" WindowStyle="None" WindowStartupLocation="CenterScreen" AllowsTransparency="True" Background="{x:Null}">
+   
+    <Grid>
+        <Rectangle RadiusY="39.494" RadiusX="39.494">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.982,0.98" StartPoint="-0.067,-0.021">
+                    <GradientStop Offset="0.518" Color="#FF2D1B4B"/>
+                    <GradientStop Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button x:Name="OK" Content="OK" HorizontalAlignment="Right" Height="33.088" Margin="0,0,0,10" VerticalAlignment="Bottom" Width="71.19" Style="{StaticResource OKButton}" Background="{x:Null}" FontSize="16"/>
+        <ScrollViewer Margin="30,30,30,60" VerticalScrollBarVisibility="Auto">
+            <TextBlock x:Name="txtMessage" TextWrapping="Wrap" Foreground="AliceBlue" />
+        </ScrollViewer>
+
+    </Grid>
+</Window>
